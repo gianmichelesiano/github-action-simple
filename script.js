@@ -73,7 +73,7 @@ const translations = {
       
       // Hero section
       'hero_title': 'Revolutionize Your Business with Intelligent AI Solutions',
-      'hero_description': 'Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth. Join the 200+ businesses already thriving with our solutions.',
+      'hero_description': 'Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth.',
       'explore_solutions': 'Explore Solutions',
       'contact_direct': 'Or contact us directly:',
       'email_us': 'Or email us:',
@@ -159,7 +159,7 @@ const translations = {
       
       // Hero section
       'hero_title': 'Rivoluziona la Tua Azienda con Soluzioni AI Intelligenti',
-      'hero_description': 'Speats fornisce applicazioni AI all\'avanguardia e agenti autonomi che riducono i costi operativi fino al 40% favorendo l\'innovazione e la crescita. Unisciti alle oltre 200 aziende che già prosperano con le nostre soluzioni.',
+      'hero_description': 'Speats fornisce applicazioni AI all\'avanguardia e agenti autonomi che riducono i costi operativi fino al 40% favorendo l\'innovazione e la crescita.',
       'explore_solutions': 'Esplora Soluzioni',
       'contact_direct': 'O contattaci direttamente:',
       'email_us': 'O inviaci un\'email:',
@@ -230,7 +230,7 @@ const translations = {
       
       // Hero section
       'hero_title': 'Révolutionnez Votre Entreprise avec des Solutions IA Intelligentes',
-      'hero_description': 'Speats propose des applications d\'IA de pointe et des agents autonomes qui réduisent les coûts opérationnels jusqu\'à 40% tout en favorisant l\'innovation et la croissance. Rejoignez les plus de 200 entreprises qui prospèrent déjà avec nos solutions.',
+      'hero_description': 'Speats propose des applications d\'IA de pointe et des agents autonomes qui réduisent les coûts opérationnels jusqu\'à 40% tout en favorisant l\'innovation et la croissance.',
       'explore_solutions': 'Explorer les Solutions',
       'contact_direct': 'Ou contactez-nous directement :',
       'email_us': 'Ou envoyez-nous un email :',
@@ -316,7 +316,7 @@ const translations = {
       
       // Hero section
       'hero_title': 'Revolutionieren Sie Ihr Unternehmen mit Intelligenten KI-Lösungen',
-      'hero_description': 'Speats liefert modernste KI-Anwendungen und autonome Agenten, die die Betriebskosten um bis zu 40% senken und gleichzeitig Innovation und Wachstum fördern. Schließen Sie sich den über 200 Unternehmen an, die bereits mit unseren Lösungen erfolgreich sind.',
+      'hero_description': 'Speats liefert modernste KI-Anwendungen und autonome Agenten, die die Betriebskosten um bis zu 40% senken und gleichzeitig Innovation und Wachstum fördern.',
       'explore_solutions': 'Lösungen Erkunden',
       'contact_direct': 'Oder kontaktieren Sie uns direkt:',
       'email_us': 'Oder mailen Sie uns:',
