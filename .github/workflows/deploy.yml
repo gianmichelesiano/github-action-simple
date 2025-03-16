@@ -37,7 +37,35 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Install sshpass
+      run: sudo apt-get install -y sshpassname: Deploy to Linode
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install sshpass
       run: sudo apt-get install -y sshpass
+    
+    - name: Deploy to Linode
+      env:
+        SSH_PASS: ${{ secrets.SSH_PASSWORD }}
+      run: |
+        # Disabilita la verifica degli host conosciuti
+        mkdir -p ~/.ssh
+        echo "StrictHostKeyChecking no" > ~/.ssh/config
+        
+        # Assicurati che la directory esista sul server
+        sshpass -p "$SSH_PASS" ssh root@172.232.218.152 "mkdir -p /var/www/speats.ch"
+        
+        # Deploy dei file
+        sshpass -p "$SSH_PASS" rsync -avz --delete ./ root@172.232.218.152:/var/www/speats.ch/
     
     - name: Deploy to Linode
       env:
