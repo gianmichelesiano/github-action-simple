@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speats | AI Solutions & Automation</title>
+    <title>Speats | Soluzioni AI & Automazione per Aziende | Svizzera</title>
+    <meta name="description" content="Speats offre soluzioni di intelligenza artificiale e automazione che riducono i costi operativi fino al 40%. Agenti intelligenti, automazione dei processi e applicazioni AI personalizzate.">
+    <meta name="keywords" content="intelligenza artificiale, AI, automazione, agenti intelligenti, soluzioni aziendali, riduzione costi, efficienza operativa, Svizzera">
+    <meta name="author" content="Speats">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.speats.ch/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.speats.ch/">
+    <meta property="og:title" content="Speats | Soluzioni AI & Automazione per Aziende">
+    <meta property="og:description" content="Riduci i costi operativi fino al 40% con le nostre soluzioni di intelligenza artificiale e automazione. Agenti intelligenti, automazione dei processi e applicazioni AI personalizzate.">
+    <meta property="og:image" content="https://www.speats.ch/assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.speats.ch/">
+    <meta property="twitter:title" content="Speats | Soluzioni AI & Automazione per Aziende">
+    <meta property="twitter:description" content="Riduci i costi operativi fino al 40% con le nostre soluzioni di intelligenza artificiale e automazione. Agenti intelligenti, automazione dei processi e applicazioni AI personalizzate.">
+    <meta property="twitter:image" content="https://www.speats.ch/assets/og-image.jpg">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/Organization">
     <header>
         <div class="container">
             <nav>
-                <div class="logo" data-i18n="logo">
+                <div class="logo" data-i18n="logo" itemprop="name">
                     Spe<span>ats</span>
                 </div>
                 <div class="language-globe">
@@ -52,7 +76,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 data-i18n="hero_title">Revolutionize Your Business with Intelligent AI Solutions</h1>
-                    <p data-i18n="hero_description">Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth. Join the 200+ businesses already thriving with our solutions.</p>
+                    <p data-i18n="hero_description" itemprop="description">Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth. Join the 200+ businesses already thriving with our solutions.</p>
                     
                     <div class="btn-group">
                         <a href="#services" class="btn" data-i18n="explore_solutions">Explore Solutions</a>
@@ -60,7 +84,7 @@
 
                 </div>
                 <div class="hero-image">
-                    <img src="assets/21f3c765-e63c-4d92-badf-64196acd0c64.png" alt="AI Technology Illustration">
+                    <img src="assets/21f3c765-e63c-4d92-badf-64196acd0c64.png" alt="Illustrazione di tecnologia AI avanzata per soluzioni aziendali" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
@@ -91,10 +115,11 @@
                 <h2 data-i18n="services_title">Our AI Solutions</h2>
                 <p data-i18n="services_description">We create powerful technology that solves real business problems, enhances productivity, and delivers measurable results.</p>
             </div>
-            <div class="services">
-                <div class="service-card">
+            <div itemprop="hasOfferCatalog" itemscope itemtype="http://schema.org/OfferCatalog">
+            <div class="services" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList">
+                <div class="service-card" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
                 <div class="service-icon"><i class="fas fa-brain"></i></div>
-                    <h3 data-i18n="service_intelligent_agents_title">Intelligent Agents</h3>
+                    <h3 data-i18n="service_intelligent_agents_title" itemprop="name">Intelligent Agents</h3>
                     <p data-i18n="service_intelligent_agents_description">Our autonomous AI agents can perceive your business environment, make decisions, and take actions to achieve specific goals without human intervention. They seamlessly handle complex workflows, customer interactions, and data analysis.</p>
                     <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;" data-i18n="service_key_benefits">Key Benefits:</p>
                     <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
@@ -104,9 +129,9 @@
                         <li data-i18n="service_key_benefit_4">Self-learning capabilities</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
                 <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 data-i18n="service_process_automation_title">Process Automation</h3>
+                    <h3 data-i18n="service_process_automation_title" itemprop="name">Process Automation</h3>
                     <p data-i18n="service_process_automation_description">Streamline workflows and eliminate repetitive tasks with our advanced automation solutions, allowing your team to focus on high-value work while reducing operational costs and improving accuracy.</p>
                     <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;" data-i18n="service_automation_areas">Automation Areas:</p>
                     <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
@@ -116,9 +141,9 @@
                         <li data-i18n="service_automation_area_4">Regulatory compliance</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
                 <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3 data-i18n="service_custom_ai_applications_title">Custom AI Applications</h3>
+                    <h3 data-i18n="service_custom_ai_applications_title" itemprop="name">Custom AI Applications</h3>
                     <p data-i18n="service_custom_ai_applications_description">We design and develop tailored AI applications that address your specific business challenges and optimize operational efficiency with solutions built specifically for your unique needs.</p>
                     <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;" data-i18n="service_features">Features:</p>
                     <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
@@ -207,14 +232,14 @@
                 </div>
                 <div class="footer-links">
                     <h4 data-i18n="footer_contact_us">Contact Us</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i> Brandstrasse 21, Schlieren, Switzerland
+                    <div class="contact-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i> <span itemprop="streetAddress">Brandstrasse 21</span>, <span itemprop="addressLocality">Schlieren</span>, <span itemprop="addressCountry">Switzerland</span>
                     </div>
                     <div class="contact-info">
-                        <i class="fas fa-phone"></i> +41 79 450 89 27
+                        <i class="fas fa-phone"></i> <a href="tel:+41794508927" itemprop="telephone">+41 79 450 89 27</a>
                     </div>
                     <div class="contact-info">
-                        <i class="fas fa-envelope"></i> info@speats.ch
+                        <i class="fas fa-envelope"></i> <a href="mailto:info@speats.ch" itemprop="email">info@speats.ch</a>
                     </div>
                 </div>
             </div>
@@ -223,6 +248,76 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <!-- Structured data for local business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Speats",
+      "image": "https://www.speats.ch/assets/21f3c765-e63c-4d92-badf-64196acd0c64.png",
+      "url": "https://www.speats.ch",
+      "telephone": "+41794508927",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Brandstrasse 21",
+        "addressLocality": "Schlieren",
+        "addressCountry": "Switzerland"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.3964,
+        "longitude": 8.4548
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/speats",
+        "https://twitter.com/speats"
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+    
+    <!-- Structured data for FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Come può l'AI ridurre i costi operativi della mia azienda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'AI può automatizzare processi ripetitivi, ridurre gli errori umani, ottimizzare l'allocazione delle risorse e migliorare l'efficienza operativa, portando a una riduzione dei costi fino al 40%."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Quanto tempo ci vuole per implementare una soluzione AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il tempo di implementazione varia in base alla complessità del progetto. Soluzioni semplici possono essere operative in 4-6 settimane, mentre progetti più complessi richiedono 3-6 mesi."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Le vostre soluzioni AI sono personalizzabili per le esigenze specifiche della mia azienda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì, tutte le nostre soluzioni sono altamente personalizzabili. Iniziamo con un'analisi approfondita delle vostre esigenze aziendali e sviluppiamo soluzioni su misura che si integrano perfettamente con i vostri processi esistenti."
+        }
+      }]
+    }
+    </script>
+    
+    <script src="script.js" defer></script>
 </body>
 </html>

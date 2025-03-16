@@ -1,4 +1,4 @@
-// Mobile menu toggle functions
+// Mobile menu toggle functions - Ottimizzato per prestazioni
 function toggleMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navWrapper = document.querySelector('.nav-wrapper');
@@ -8,6 +8,11 @@ function toggleMenu() {
     
     // Prevent scrolling when menu is open
     document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : 'auto';
+    
+    // Accessibilità - Aggiorna attributi ARIA
+    const isExpanded = hamburger.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
+    navWrapper.setAttribute('aria-hidden', !isExpanded);
 }
 
 function closeMenu() {
@@ -498,4 +503,114 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Iniziale sostituzione dei testi
     updatePageText();
+    
+    // Ottimizzazione SEO - Lazy loading per immagini
+    setupLazyLoading();
+    
+    // Ottimizzazione SEO - Aggiungi attributi alt mancanti
+    addMissingAltAttributes();
+    
+    // Ottimizzazione SEO - Aggiungi hreflang per supporto multilingua
+    addHreflangTags();
+    
+    // Ottimizzazione SEO - Aggiungi tracciamento eventi
+    setupEventTracking();
 });
+
+// Funzione per implementare lazy loading delle immagini
+function setupLazyLoading() {
+    // Seleziona tutte le immagini che non sono nella hero section
+    const images = document.querySelectorAll('img:not(.hero-image img)');
+    
+    // Configura l'Intersection Observer
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                // Carica l'immagine se ha un attributo data-src
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            }
+        });
+    });
+    
+    // Osserva ogni immagine
+    images.forEach(img => {
+        img.classList.add('lazy-load');
+        imageObserver.observe(img);
+    });
+}
+
+// Funzione per aggiungere attributi alt mancanti
+function addMissingAltAttributes() {
+    const images = document.querySelectorAll('img:not([alt])');
+    images.forEach(img => {
+        // Cerca di determinare un alt text appropriato dal contesto
+        const parentText = img.parentElement.textContent.trim();
+        const nearestHeading = img.closest('section')?.querySelector('h1, h2, h3, h4, h5, h6')?.textContent;
+        
+        // Imposta un alt text basato sul contesto o un valore generico
+        img.alt = parentText || nearestHeading || 'Immagine Speats';
+    });
+}
+
+// Funzione per aggiungere tag hreflang per SEO multilingua
+function addHreflangTags() {
+    const head = document.querySelector('head');
+    const languages = Object.keys(translations);
+    const currentUrl = window.location.href.split('#')[0]; // URL base senza hash
+    
+    languages.forEach(lang => {
+        const link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = lang;
+        link.href = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'lang=' + lang;
+        head.appendChild(link);
+    });
+    
+    // Aggiungi anche il tag x-default
+    const defaultLink = document.createElement('link');
+    defaultLink.rel = 'alternate';
+    defaultLink.hreflang = 'x-default';
+    defaultLink.href = currentUrl;
+    head.appendChild(defaultLink);
+}
+
+// Funzione per tracciare eventi per analisi SEO
+function setupEventTracking() {
+    // Traccia clic sui link di navigazione
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            trackEvent('Navigation', 'Click', this.textContent);
+        });
+    });
+    
+    // Traccia clic sui pulsanti CTA
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function() {
+            trackEvent('CTA', 'Click', this.textContent);
+        });
+    });
+    
+    // Traccia cambio lingua
+    document.querySelectorAll('.lang-option').forEach(option => {
+        option.addEventListener('click', function() {
+            trackEvent('Language', 'Change', this.textContent);
+        });
+    });
+}
+
+// Funzione per tracciare eventi (placeholder - da integrare con sistema analytics reale)
+function trackEvent(category, action, label) {
+    console.log(`Event tracked: ${category} - ${action} - ${label}`);
+    // Qui si integrerebbe con Google Analytics, Matomo, ecc.
+    if (window.gtag) {
+        gtag('event', action, {
+            'event_category': category,
+            'event_label': label
+        });
+    }
+}

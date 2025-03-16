@@ -7,13 +7,29 @@
     --light: #f7f9fb; /* Off-white background */
     --gray: #546677; /* Professional mid-gray */
     --gray-light: #e8eef4; /* Light gray for sections */
+    
+    /* Font sizes for responsive typography */
+    --h1-size: clamp(2rem, 5vw, 3rem);
+    --h2-size: clamp(1.5rem, 4vw, 2.25rem);
+    --h3-size: clamp(1.25rem, 3vw, 1.75rem);
+    --body-size: clamp(1rem, 2vw, 1.125rem);
+    --small-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
+/* CSS Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Improve text rendering */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -133,14 +149,15 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 48px;
+    font-size: var(--h1-size);
     margin-bottom: 20px;
     line-height: 1.2;
     color: var(--dark);
+    font-weight: 700;
 }
 
 .hero-text p {
-    font-size: 18px;
+    font-size: var(--body-size);
     color: var(--gray);
     margin-bottom: 30px;
 }
@@ -167,7 +184,10 @@ nav {
 
 .hero-image img {
     width: 100%;
+    height: auto;
     animation: float 3s ease-in-out infinite;
+    max-width: 100%;
+    display: block;
 }
 
 @keyframes float {
@@ -187,15 +207,17 @@ nav {
 }
 
 .section-title h2 {
-    font-size: 36px;
+    font-size: var(--h2-size);
     margin-bottom: 15px;
     color: var(--primary-dark);
+    font-weight: 700;
 }
 
 .section-title p {
     color: var(--gray);
     max-width: 700px;
     margin: 0 auto;
+    font-size: var(--body-size);
 }
 
 /* Services Section */
@@ -234,12 +256,14 @@ nav {
 
 .service-card h3 {
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: var(--h3-size);
     color: var(--primary-dark);
+    font-weight: 600;
 }
 
 .service-card p {
     color: var(--gray);
+    font-size: var(--body-size);
 }
 
 /* Process Section */
@@ -291,11 +315,13 @@ nav {
 .step h3 {
     margin-bottom: 10px;
     color: var(--primary-dark);
+    font-size: var(--h3-size);
 }
 
 .step p {
     color: var(--gray);
     padding: 0 10px;
+    font-size: var(--body-size);
 }
 
 /* CTA Section */
@@ -307,14 +333,15 @@ nav {
 }
 
 .cta h2 {
-    font-size: 36px;
+    font-size: var(--h2-size);
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .cta p {
     max-width: 700px;
     margin: 0 auto 30px;
-    font-size: 18px;
+    font-size: var(--body-size);
     opacity: 0.9;
 }
 
@@ -323,7 +350,7 @@ nav {
     color: var(--primary);
     font-weight: 600;
     padding: 15px 30px;
-    font-size: 18px;
+    font-size: var(--body-size);
 }
 
 .cta .btn:hover {
@@ -356,9 +383,8 @@ nav {
     margin-bottom: 20px;
     position: relative;
     padding-left: 20px;
+    font-size: var(--body-size);
 }
-
-
 
 .testimonial-author {
     display: flex;
@@ -380,7 +406,7 @@ nav {
 }
 
 .author-title {
-    font-size: 14px;
+    font-size: var(--small-size);
     color: var(--gray);
 }
 
@@ -401,10 +427,11 @@ nav {
 .stat-item h3 {
     font-size: 42px;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .stat-item p {
-    font-size: 16px;
+    font-size: var(--body-size);
     opacity: 0.9;
 }
 
@@ -447,20 +474,22 @@ nav {
     color: white;
     padding: 5px 10px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: var(--small-size);
     font-weight: 600;
     margin-bottom: 15px;
 }
 
 .case-study-title {
-    font-size: 20px;
+    font-size: var(--h3-size);
     margin-bottom: 15px;
     color: var(--primary-dark);
+    font-weight: 600;
 }
 
 .case-study-excerpt {
     color: var(--gray);
     margin-bottom: 20px;
+    font-size: var(--body-size);
 }
 
 /* Footer */
@@ -478,14 +507,16 @@ footer {
 }
 
 .footer-info h3 {
-    font-size: 24px;
+    font-size: var(--h3-size);
     margin-bottom: 20px;
     color: white;
+    font-weight: 600;
 }
 
 .footer-info p {
     color: #c9d1d9;
     margin-bottom: 20px;
+    font-size: var(--body-size);
 }
 
 .social-links {
@@ -507,6 +538,7 @@ footer {
     font-size: 18px;
     margin-bottom: 20px;
     color: white;
+    font-weight: 600;
 }
 
 .footer-links ul {
@@ -521,6 +553,7 @@ footer {
     color: #c9d1d9;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: var(--body-size);
 }
 
 .footer-links a:hover {
@@ -532,6 +565,7 @@ footer {
     align-items: center;
     margin-bottom: 15px;
     color: #c9d1d9;
+    font-size: var(--body-size);
 }
 
 .contact-info i {
@@ -544,7 +578,7 @@ footer {
     padding-top: 30px;
     border-top: 1px solid #2d333b;
     color: #8b949e;
-    font-size: 14px;
+    font-size: var(--small-size);
 }
 
 /* Language Switcher Styles */
@@ -602,6 +636,7 @@ footer {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: var(--body-size);
 }
 
 .lang-option:hover {
@@ -612,6 +647,22 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Performance Optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Lazy loading for images below the fold */
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
 }
 
 /* Mobile Responsive Styles */
@@ -688,10 +739,6 @@ footer {
         justify-content: center;
     }
     
-    .hero-text h1 {
-        font-size: 36px;
-    }
-    
     /* Process Section */
     .process-steps {
         flex-direction: column;
@@ -739,10 +786,6 @@ footer {
 
 /* Additional media query for medium-sized screens */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .hero-text h1 {
-        font-size: 38px;
-    }
-    
     .hero-image {
         width: 45%;
     }
@@ -778,18 +821,49 @@ footer {
         background-color: var(--primary);
         color: white;
     }
+}
+
+/* Print styles for better accessibility */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
     
-    /* Stili responsivi per il selettore lingua */
-    @media (max-width: 768px) {
-        .language-selector {
-            margin: 15px 0;
-            width: 100%;
-            justify-content: center;
-        }
-        
-        /* Per dispositivi mobili, posiziona il selettore lingua nel menu hamburger */
-        .nav-wrapper .language-selector {
-            margin-top: 20px;
-        }
+    .hero, .cta, .stats-section {
+        background: white !important;
+        color: black !important;
+        padding: 1cm 0;
+    }
+    
+    .cta .btn, .btn {
+        border: 1px solid black;
+        color: black;
+        background: none;
+    }
+    
+    nav, .hamburger, .mobile-btn, .language-globe {
+        display: none;
+    }
+    
+    .hero-content, .footer-content {
+        display: block;
+    }
+    
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
     }
 }
