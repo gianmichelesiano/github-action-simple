@@ -24,12 +24,20 @@
     <meta property="twitter:description" content="Riduci i costi operativi fino al 40% con le nostre soluzioni di intelligenza artificiale e automazione. Agenti intelligenti, automazione dei processi e applicazioni AI personalizzate.">
     <meta property="twitter:image" content="https://www.speats.ch/assets/og-image.jpg">
     
-    <link rel="stylesheet" href="styles.css">
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/optimized/hero.webp" as="image" type="image/webp">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Cache control headers for static resources -->
+    <meta http-equiv="Cache-Control" content="max-age=31536000, immutable">
 </head>
 <body itemscope itemtype="http://schema.org/Organization">
     <header>
@@ -84,7 +92,10 @@
 
                 </div>
                 <div class="hero-image">
-                    <img src="assets/21f3c765-e63c-4d92-badf-64196acd0c64.png" alt="Illustrazione di tecnologia AI avanzata per soluzioni aziendali" loading="lazy" width="500" height="400">
+                    <picture>
+                        <source srcset="assets/optimized/hero.webp" type="image/webp">
+                        <img src="assets/21f3c765-e63c-4d92-badf-64196acd0c64.png" alt="Illustrazione di tecnologia AI avanzata per soluzioni aziendali" width="500" height="400">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -318,6 +329,7 @@
     }
     </script>
     
-    <script src="script.js" defer></script>
+    <!-- Compressed and minified JavaScript -->
+    <script src="script.min.js" defer></script>
 </body>
 </html>
