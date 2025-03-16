@@ -10,8 +10,19 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">
+                <div class="logo" data-i18n="logo">
                     Spe<span>ats</span>
+                </div>
+                <div class="language-globe">
+                    <div class="globe-icon" onclick="toggleLanguageMenu()">
+                        <span class="flag-icon">🇬🇧</span><span class="arrow-down">▼</span>
+                    </div>
+                    <div class="language-dropdown" id="languageMenu">
+                        <div class="lang-option" onclick="changeLanguage('en')">English</div>
+                        <div class="lang-option" onclick="changeLanguage('it')">Italiano</div>
+                        <div class="lang-option" onclick="changeLanguage('fr')">Français</div>
+                        <div class="lang-option" onclick="changeLanguage('de')">Deutsch</div>
+                    </div>
                 </div>
                 
                 <div class="hamburger" onclick="toggleMenu()">
@@ -22,15 +33,15 @@
                 
                 <div class="nav-wrapper">
                     <ul class="nav-links">
-                        <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                        <li><a href="#services" onclick="closeMenu()">Services</a></li>
-                        <li><a href="#about" onclick="closeMenu()">About</a></li>
-                        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                        <li><a href="#home" onclick="closeMenu()" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#services" onclick="closeMenu()" data-i18n="nav_services">Services</a></li>
+                        <li><a href="#about" onclick="closeMenu()" data-i18n="nav_about">About</a></li>
+                        <li><a href="#contact" onclick="closeMenu()" data-i18n="nav_contact">Contact</a></li>
                     </ul>
-                    <a href="#contact" class="btn mobile-btn" onclick="closeMenu()">Get Started</a>
+                    <a href="#contact" class="btn mobile-btn" onclick="closeMenu()" data-i18n="get_started">Get Started</a>
                 </div>
                 
-                <a href="#contact" class="btn header-btn">Get Started</a>
+                <a href="#contact" class="btn header-btn" data-i18n="get_started">Get Started</a>
             </nav>
         </div>
     </header>
@@ -39,13 +50,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Revolutionize Your Business with <span style="color: var(--primary);">Intelligent AI</span> Solutions</h1>
-                    <p>Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth. Join the 200+ businesses already thriving with our solutions.</p>
+                    <h1 data-i18n="hero_title">Revolutionize Your Business with Intelligent AI Solutions</h1>
+                    <p data-i18n="hero_description">Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth. Join the 200+ businesses already thriving with our solutions.</p>
+                    
                     <div class="btn-group">
-                        <a href="#services" class="btn">Explore Solutions</a>
+                        <a href="#services" class="btn" data-i18n="explore_solutions">Explore Solutions</a>
                     </div>
-                    <p>Or contact us directly: <a href="tel:+41794508927">+41 79 450 89 27</a><br>
+                    <p data-i18n="contact_us_directly">Or contact us directly: <a href="tel:+41794508927">+41 79 450 89 27</a><br>
                     Or email us: <a href="mailto:info@speats.ch">info@speats.ch</a></p>
+                    <p data-i18n="translate_language">Translate language Or contact us directly: <a href="tel:+41794508927">+41 79 450 89 27</a><br>
+                    Or email us: <a href="mailto:info@speats.ch">info@speats.ch</a></p>
+
                 </div>
                 <div class="hero-image">
                     <img src="assets/21f3c765-e63c-4d92-badf-64196acd0c64.png" alt="AI Technology Illustration">
@@ -59,15 +74,15 @@
             <div class="stats-container">
                 <div class="stat-item">
                     <h3>40%</h3>
-                    <p>Average Cost Reduction</p>
+                    <p data-i18n="stat_cost_reduction">Average Cost Reduction</p>
                 </div>
                 <div class="stat-item">
                     <h3>85%</h3>
-                    <p>Increase in Efficiency</p>
+                    <p data-i18n="stat_efficiency_increase">Increase in Efficiency</p>
                 </div>
                 <div class="stat-item">
                     <h3>3x</h3>
-                    <p>ROI Within 6 Months</p>
+                    <p data-i18n="stat_roi">ROI Within 6 Months</p>
                 </div>
             </div>
         </div>
@@ -76,44 +91,44 @@
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our AI Solutions</h2>
-                <p>We create powerful technology that solves real business problems, enhances productivity, and delivers measurable results.</p>
+                <h2 data-i18n="services_title">Our AI Solutions</h2>
+                <p data-i18n="services_description">We create powerful technology that solves real business problems, enhances productivity, and delivers measurable results.</p>
             </div>
             <div class="services">
                 <div class="service-card">
                     <div class="service-icon">🧠</div>
-                    <h3>Intelligent Agents</h3>
-                    <p>Our autonomous AI agents can perceive your business environment, make decisions, and take actions to achieve specific goals without human intervention. They seamlessly handle complex workflows, customer interactions, and data analysis.</p>
-                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;">Key Benefits:</p>
+                    <h3 data-i18n="service_intelligent_agents_title">Intelligent Agents</h3>
+                    <p data-i18n="service_intelligent_agents_description">Our autonomous AI agents can perceive your business environment, make decisions, and take actions to achieve specific goals without human intervention. They seamlessly handle complex workflows, customer interactions, and data analysis.</p>
+                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;" data-i18n="service_key_benefits">Key Benefits:</p>
                     <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
-                        <li>24/7 operation without fatigue</li>
-                        <li>Consistent performance</li>
-                        <li>Scalable across departments</li>
-                        <li>Self-learning capabilities</li>
+                        <li data-i18n="service_key_benefit_1">24/7 operation without fatigue</li>
+                        <li data-i18n="service_key_benefit_2">Consistent performance</li>
+                        <li data-i18n="service_key_benefit_3">Scalable across departments</li>
+                        <li data-i18n="service_key_benefit_4">Self-learning capabilities</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
-                    <h3>Process Automation</h3>
-                    <p>Streamline workflows and eliminate repetitive tasks with our advanced automation solutions, allowing your team to focus on high-value work while reducing operational costs and improving accuracy.</p>
-                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;">Automation Areas:</p>
+                    <h3 data-i18n="service_process_automation_title">Process Automation</h3>
+                    <p data-i18n="service_process_automation_description">Streamline workflows and eliminate repetitive tasks with our advanced automation solutions, allowing your team to focus on high-value work while reducing operational costs and improving accuracy.</p>
+                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;" data-i18n="service_automation_areas">Automation Areas:</p>
                     <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
-                        <li>Document processing & analysis</li>
-                        <li>Customer service operations</li>
-                        <li>Supply chain optimization</li>
-                        <li>Regulatory compliance</li>
+                        <li data-i18n="service_automation_area_1">Document processing & analysis</li>
+                        <li data-i18n="service_automation_area_2">Customer service operations</li>
+                        <li data-i18n="service_automation_area_3">Supply chain optimization</li>
+                        <li data-i18n="service_automation_area_4">Regulatory compliance</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
-                    <h3>Custom AI Applications</h3>
-                    <p>We design and develop tailored AI applications that address your specific business challenges and optimize operational efficiency with solutions built specifically for your unique needs.</p>
-                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;">Features:</p>
+                    <h3 data-i18n="service_custom_ai_applications_title">Custom AI Applications</h3>
+                    <p data-i18n="service_custom_ai_applications_description">We design and develop tailored AI applications that address your specific business challenges and optimize operational efficiency with solutions built specifically for your unique needs.</p>
+                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;" data-i18n="service_features">Features:</p>
                     <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
-                        <li>Predictive analytics</li>
-                        <li>Natural language processing</li>
-                        <li>Computer vision solutions</li>
-                        <li>Decision support systems</li>
+                        <li data-i18n="service_feature_1">Predictive analytics</li>
+                        <li data-i18n="service_feature_2">Natural language processing</li>
+                        <li data-i18n="service_feature_3">Computer vision solutions</li>
+                        <li data-i18n="service_feature_4">Decision support systems</li>
                     </ul>
                 </div>
             </div>
@@ -123,29 +138,29 @@
     <section class="section process" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Our Approach</h2>
-                <p>We follow a structured approach to understand your needs and deliver solutions that exceed expectations.</p>
+                <h2 data-i18n="approach_title">Our Approach</h2>
+                <p data-i18n="approach_description">We follow a structured approach to understand your needs and deliver solutions that exceed expectations.</p>
             </div>
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Discovery</h3>
-                    <p>We analyze your challenges and identify opportunities for AI and automation.</p>
+                    <h3 data-i18n="process_step_1_title">Discovery</h3>
+                    <p data-i18n="process_step_1_description">We analyze your challenges and identify opportunities for AI and automation.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Design</h3>
-                    <p>We architect tailored solutions with cutting-edge AI technology.</p>
+                    <h3 data-i18n="process_step_2_title">Design</h3>
+                    <p data-i18n="process_step_2_description">We architect tailored solutions with cutting-edge AI technology.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Development</h3>
-                    <p>Our experts build and refine your solution using agile methodologies.</p>
+                    <h3 data-i18n="process_step_3_title">Development</h3>
+                    <p data-i18n="process_step_3_description">Our experts build and refine your solution using agile methodologies.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Deployment</h3>
-                    <p>We implement, test, and optimize for maximum impact and ROI.</p>
+                    <h3 data-i18n="process_step_4_title">Deployment</h3>
+                    <p data-i18n="process_step_4_description">We implement, test, and optimize for maximum impact and ROI.</p>
                 </div>
             </div>
         </div>
@@ -153,11 +168,11 @@
     
     <section class="cta">
         <div class="container">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Let's discuss how our AI solutions can help you achieve your goals and stay ahead of the competition.</p>
+            <h2 data-i18n="cta_title">Ready to Transform Your Business?</h2>
+            <p data-i18n="cta_description">Let's discuss how our AI solutions can help you achieve your goals and stay ahead of the competition.</p>
             <div class="btn-group">
-                <a href="tel:+41794508927" class="btn">Call +41 79 450 89 27</a>
-                <a href="mailto:info@speats.ch" class="btn btn-secondary">Send Mail</a>
+                <a href="tel:+41794508927" class="btn" data-i18n="cta_call_us">Call +41 79 450 89 27</a>
+                <a href="mailto:info@speats.ch" class="btn btn-secondary" data-i18n="cta_send_mail">Send Mail</a>
             </div>
         </div>
     </section>
@@ -167,7 +182,7 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <h3>Speats</h3>
-                    <p>Leveraging cutting-edge AI technology, we empower businesses to streamline operations, drive innovation, and deliver exceptional customer experiences.</p>
+                    <p data-i18n="footer_description">Leveraging cutting-edge AI technology, we empower businesses to streamline operations, drive innovation, and deliver exceptional customer experiences.</p>
                     <div class="social-links">
                         <a href="#">📱</a>
                         <a href="#">💻</a>
@@ -176,25 +191,25 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer_company">Company</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="#about" data-i18n="footer_about_us">About Us</a></li>
+                        <li><a href="#services" data-i18n="footer_services">Services</a></li>
+                        <li><a href="#" data-i18n="footer_case_studies">Case Studies</a></li>
+                        <li><a href="#" data-i18n="footer_careers">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Solutions</h4>
+                    <h4 data-i18n="footer_solutions">Solutions</h4>
                     <ul>
-                        <li><a href="#">AI Applications</a></li>
-                        <li><a href="#">Intelligent Agents</a></li>
-                        <li><a href="#">Process Automation</a></li>
-                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="#" data-i18n="footer_ai_applications">AI Applications</a></li>
+                        <li><a href="#" data-i18n="footer_intelligent_agents">Intelligent Agents</a></li>
+                        <li><a href="#" data-i18n="footer_process_automation">Process Automation</a></li>
+                        <li><a href="#" data-i18n="footer_data_analytics">Data Analytics</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Contact Us</h4>
+                    <h4 data-i18n="footer_contact_us">Contact Us</h4>
                     <div class="contact-info">
                         <i>📍</i> Brandstrasse 21, Schlieren, Switzerland
                     </div>
@@ -207,7 +222,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Speats. All Rights Reserved.</p>
+                <p data-i18n="footer_copyright">© 2025 Speats. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
