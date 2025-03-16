@@ -1,36 +1,581 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speats.ch</title>
+    <title>Speats | AI Solutions & Automation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #0f4c81; /* Deep professional blue */
+            --primary-dark: #0a3258; /* Darker blue for hover states */
+            --secondary: #435a78; /* Secondary blue-gray */
+            --accent: #7c9cbf; /* Light accent blue */
+            --dark: #1a1a2e; /* Near black for text */
+            --light: #f7f9fb; /* Off-white background */
+            --gray: #546677; /* Professional mid-gray */
+            --gray-light: #e8eef4; /* Light gray for sections */
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f5f5f5;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
         .container {
-            max-width: 800px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        h1 {
-            color: #333;
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #e8eef4 0%, #d4e2f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-image {
+            width: 40%;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gray-light);
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--primary-dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+        }
+        
+        .process {
+            background-color: var(--gray-light);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        .process-steps::before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 25%;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        .step p {
+            color: var(--gray);
+            padding: 0 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .cta .btn {
+            background-color: white;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        
+        .cta .btn:hover {
+            background-color: var(--light);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-info p {
+            color: #c9d1d9;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #c9d1d9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #c9d1d9;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d333b;
+            color: #8b949e;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-image {
+                width: 80%;
+                margin-top: 40px;
+            }
+            
+            .btn-group {
+                justify-content: center;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+            
+            .step {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Mmmat Benvenuto su Speats.ch</h1>
-        <p>Questo è il mio sito web ospitato su Linode e distribuito tramite GitHub Actions.</p>
-    </div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Spe<span>ats</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn">Get Started</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforming Business with <span style="color: var(--primary);">AI</span> Solutions</h1>
+                    <p>Speats specializes in creating cutting-edge AI applications, intelligent agents, and automation solutions that streamline your operations and drive innovation.</p>
+                    <div class="btn-group">
+                        <a href="#services" class="btn">Our Services</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/api/placeholder/550/400" alt="AI Technology Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our AI Solutions</h2>
+                <p>We create powerful technology that solves real business problems, enhances productivity, and delivers measurable results.</p>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">AI</div>
+                    <h3>Custom AI Applications</h3>
+                    <p>We design and develop tailored AI applications that address your specific business challenges and optimize operational efficiency.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍💻</div>
+                    <h3>Intelligent Agents</h3>
+                    <p>Our intelligent agents automate complex tasks, make data-driven decisions, and provide real-time assistance to your customers and employees.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Process Automation</h3>
+                    <p>Streamline workflows and eliminate repetitive tasks with our advanced automation solutions, allowing your team to focus on high-value work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section process" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Approach</h2>
+                <p>We follow a structured approach to understand your needs and deliver solutions that exceed expectations.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We analyze your challenges and identify opportunities for AI and automation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>We architect tailored solutions with cutting-edge AI technology.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Our experts build and refine your solution using agile methodologies.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Deployment</h3>
+                    <p>We implement, test, and optimize for maximum impact and ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how our AI solutions can help you achieve your goals and stay ahead of the competition.</p>
+            <a href="#contact" class="btn">Schedule a Consultation</a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Speats</h3>
+                    <p>Pioneering AI solutions to help businesses automate processes, enhance decision-making, and create exceptional customer experiences.</p>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">💻</a>
+                        <a href="#">📧</a>
+                        <a href="#">🔗</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">AI Applications</a></li>
+                        <li><a href="#">Intelligent Agents</a></li>
+                        <li><a href="#">Process Automation</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <i>📍</i> Brandstrasse 21, Schlieren, Switzerland
+                    </div>
+                    <div class="contact-info">
+                        <i>📞</i> +41 79 450 89 27
+                    </div>
+                    <div class="contact-info">
+                        <i>📧</i> info@speats.ch
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Speats. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
