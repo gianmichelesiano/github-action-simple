@@ -704,10 +704,16 @@ footer {
         left: 50%;
         top: 0;
         transform: translateX(-50%);
+        z-index: 0; /* Ensure the line is behind the text */
     }
     
     .step {
         width: 100%;
+        background-color: var(--gray-light); /* Add background to hide the line behind text */
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        z-index: 2; /* Ensure text is above the line */
     }
     
     /* Footer */
