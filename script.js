@@ -460,18 +460,40 @@ function updatePageText() {
     });
 }
   
+// Funzione per rilevare la lingua preferita del browser
+function detectBrowserLanguage() {
+    // Ottiene le preferenze di lingua dal browser
+    const browserLang = navigator.language || navigator.userLanguage;
+    
+    // Estrae il codice lingua principale (es. 'it' da 'it-IT')
+    const primaryLang = browserLang.split('-')[0].toLowerCase();
+    
+    // Controlla se la lingua è supportata
+    if (translations[primaryLang]) {
+        return primaryLang;
+    }
+    
+    // Fallback su inglese se la lingua non è supportata
+    return 'en';
+}
+
 // Inizializza la lingua all'avvio
 document.addEventListener('DOMContentLoaded', function() {
     // Controlla se c'è una preferenza salvata
     const savedLanguage = localStorage.getItem('language');
     
-    // Imposta la lingua salvata o quella predefinita
+    // Imposta la lingua salvata, altrimenti usa la lingua del browser
     if (savedLanguage && translations[savedLanguage]) {
         currentLanguage = savedLanguage;
         updateFlagIcon(savedLanguage);
     } else {
-        // Default to English
-        updateFlagIcon('en');
+        // Rileva la lingua del browser
+        const browserLanguage = detectBrowserLanguage();
+        currentLanguage = browserLanguage;
+        updateFlagIcon(browserLanguage);
+        
+        // Salva la preferenza rilevata
+        localStorage.setItem('language', browserLanguage);
     }
     
     // Iniziale sostituzione dei testi
