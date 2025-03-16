@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speats | AI Solutions & Automation</title>
+    <style>
+        :root {
+            --primary: #0f4c81; /* Deep professional blue */
+            --primary-dark: #0a3258; /* Darker blue for hover states */
+            --secondary: #435a78; /* Secondary blue-gray */
+            --accent: #7c9cbf; /* Light accent blue */
+            --dark: #1a1a2e; /* Near black for text */
+            --light: #f7f9fb; /* Off-white background */
+            --gray: #546677; /* Professional mid-gray */
+            --gray-light: #e8eef4; /* Light gray for sections */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #e8eef4 0%, #d4e2f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-image {
+            width: 40%;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gray-light);
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--primary-dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+        }
+        
+        .process {
+            background-color: var(--gray-light);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        .process-steps::before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 25%;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        .step p {
+            color: var(--gray);
+            padding: 0 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .cta .btn {
+            background-color: white;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        
+        .cta .btn:hover {
+            background-color: var(--light);
+        }
+        
+        .testimonials {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .testimonial-text::before {
+            content: """;
+            font-size: 60px;
+            color: var(--primary);
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            opacity: 0.2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .author-title {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .case-studies {
+            padding: 80px 0;
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .case-study-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .case-study-image {
+            height: 200px;
+            background-color: var(--gray-light);
+        }
+        
+        .case-study-content {
+            padding: 25px;
+        }
+        
+        .case-study-tag {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .case-study-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .case-study-excerpt {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-info p {
+            color: #c9d1d9;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #c9d1d9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #c9d1d9;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d333b;
+            color: #8b949e;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-image {
+                width: 80%;
+                margin-top: 40px;
+            }
+            
+            .btn-group {
+                justify-content: center;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+            
+            .step {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Spe<span>ats</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#consultation" class="btn" onclick="openConsultationForm()">Free Consultation</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div id="consultationForm" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 1000; width: 90%; max-width: 500px;">
+        <h2 style="color: var(--primary-dark); margin-bottom: 20px;">Schedule Your Free AI Consultation</h2>
+        <p style="margin-bottom: 20px; color: var(--gray);">Tell us about your business challenges and how you think AI could help. Our experts will analyze your needs and propose tailored solutions.</p>
+        <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+        <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+        <textarea id="consultationRequest" rows="4" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;" placeholder="Describe your business challenges and objectives..."></textarea>
+        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button onclick="closeConsultationForm()" style="padding: 12px 20px; background: #f5f5f5; border: none; border-radius: 4px; cursor: pointer;">Cancel</button>
+            <button onclick="sendConsultationRequest()" style="padding: 12px 20px; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer;">Submit Request</button>
+        </div>
+    </div>
+    
+    <script>
+        function openConsultationForm() {
+            document.getElementById('consultationForm').style.display = 'block';
+        }
+        function closeConsultationForm() {
+            document.getElementById('consultationForm').style.display = 'none';
+        }
+        function sendConsultationRequest() {
+            var request = document.getElementById('consultationRequest').value;
+            var mailtoLink = 'mailto:info@speats.ch?subject=Consultation Request&body=' + encodeURIComponent(request);
+            window.location.href = mailtoLink;
+            closeConsultationForm();
+            alert("Thank you for your interest! We'll get back to you within 24 hours.");
+        }
+    </script>
+    
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Revolutionize Your Business with <span style="color: var(--primary);">Intelligent AI</span> Solutions</h1>
+                    <p>Speats delivers cutting-edge AI applications and autonomous agents that reduce operational costs by up to 40% while driving innovation and growth. Join the 200+ businesses already thriving with our solutions.</p>
+                    <div class="btn-group">
+                        <a href="#services" class="btn">Explore Solutions</a>
+                        <a href="#consultation" class="btn btn-secondary" onclick="openConsultationForm()">Free Consultation</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/api/placeholder/500/400" alt="AI Business Transformation">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Clients Worldwide</p>
+                </div>
+                <div class="stat-item">
+                    <h3>40%</h3>
+                    <p>Average Cost Reduction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>85%</h3>
+                    <p>Increase in Efficiency</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3x</h3>
+                    <p>ROI Within 6 Months</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our AI Solutions</h2>
+                <p>We create powerful technology that solves real business problems, enhances productivity, and delivers measurable results.</p>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Intelligent Agents</h3>
+                    <p>Our autonomous AI agents can perceive your business environment, make decisions, and take actions to achieve specific goals without human intervention. They seamlessly handle complex workflows, customer interactions, and data analysis.</p>
+                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;">Key Benefits:</p>
+                    <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
+                        <li>24/7 operation without fatigue</li>
+                        <li>Consistent performance</li>
+                        <li>Scalable across departments</li>
+                        <li>Self-learning capabilities</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Process Automation</h3>
+                    <p>Streamline workflows and eliminate repetitive tasks with our advanced automation solutions, allowing your team to focus on high-value work while reducing operational costs and improving accuracy.</p>
+                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;">Automation Areas:</p>
+                    <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
+                        <li>Document processing & analysis</li>
+                        <li>Customer service operations</li>
+                        <li>Supply chain optimization</li>
+                        <li>Regulatory compliance</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Custom AI Applications</h3>
+                    <p>We design and develop tailored AI applications that address your specific business challenges and optimize operational efficiency with solutions built specifically for your unique needs.</p>
+                    <p style="margin-top: 15px; color: var(--primary-dark); font-weight: 500;">Features:</p>
+                    <ul style="margin-top: 10px; color: var(--gray); padding-left: 20px;">
+                        <li>Predictive analytics</li>
+                        <li>Natural language processing</li>
+                        <li>Computer vision solutions</li>
+                        <li>Decision support systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section case-studies" id="case-studies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>See how leading companies across industries have transformed their operations with our AI solutions.</p>
+            </div>
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="/api/placeholder/400/200" alt="Manufacturing AI Case Study">
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-tag">Manufacturing</span>
+                        <h3 class="case-study-title">Swiss Precision Manufacturing Co.</h3>
+                        <p class="case-study-excerpt">Reduced production errors by 78% and increased throughput by 35% by implementing our predictive maintenance AI system.</p>
+                        <a href="#" class="btn btn-secondary">Read Case Study</a>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="/api/placeholder/400/200" alt="Financial Services AI Case Study">
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-tag">Financial Services</span>
+                        <h3 class="case-study-title">Global Banking Institution</h3>
+                        <p class="case-study-excerpt">Automated 85% of compliance processes while improving accuracy by 93% using our intelligent document processing system.</p>
+                        <a href="#" class="btn btn-secondary">Read Case Study</a>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="/api/placeholder/400/200" alt="Healthcare AI Case Study">
+                    </div>
+                    <div class="case-study-content">
+                        <span class="case-study-tag">Healthcare</span>
+                        <h3 class="case-study-title">European Medical Network</h3>
+                        <p class="case-study-excerpt">Reduced administrative workload by 42% and improved patient scheduling efficiency by 67% with our AI assistant.</p>
+                        <a href="#" class="btn btn-secondary">Read Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it - hear from some of our satisfied clients.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Speats' AI agents have completely transformed how we manage our customer service operations. We've seen a 65% reduction in response times and a 40% increase in customer satisfaction scores.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="/api/placeholder/50/50" alt="Client Portrait">
+                        </div>
+                        <div>
+                            <p class="author-name">Sophie Müller</p>
+                            <p class="author-title">CTO, Retail Solutions GmbH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The ROI from implementing Speats' process automation solutions exceeded our expectations. Within just 4 months, we achieved cost savings of over 2 million CHF annually.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="/api/placeholder/50/50" alt="Client Portrait">
+                        </div>
+                        <div>
+                            <p class="author-name">Thomas Bergman</p>
+                            <p class="author-title">COO, Swiss Manufacturing Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Working with Speats was effortless. Their team quickly understood our complex regulatory requirements and delivered an AI solution that reduced our compliance workload by 70%.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="/api/placeholder/50/50" alt="Client Portrait">
+                        </div>
+                        <div>
+                            <p class="author-name">Elena Rossi</p>
+                            <p class="author-title">Compliance Director, European Financial Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section process" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Approach</h2>
+                <p>We follow a structured approach to understand your needs and deliver solutions that exceed expectations.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We analyze your challenges and identify opportunities for AI and automation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>We architect tailored solutions with cutting-edge AI technology.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Our experts build and refine your solution using agile methodologies.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Deployment</h3>
+                    <p>We implement, test, and optimize for maximum impact and ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how our AI solutions can help you achieve your goals and stay ahead of the competition.</p>
+            <a href="#consultation" class="btn" onclick="openConsultationForm()">Schedule a Consultation</a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Speats</h3>
+                    <p>Leveraging cutting
+                        <p>Leveraging cutting-edge AI technology, we empower businesses to streamline operations, drive innovation, and deliver exceptional customer experiences.</p>
+                        <div class="social-links">
+                            <a href="#">📱</a>
+                            <a href="#">💻</a>
+                            <a href="#">📧</a>
+                            <a href="#">🔗</a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="#">AI Applications</a></li>
+                            <li><a href="#">Intelligent Agents</a></li>
+                            <li><a href="#">Process Automation</a></li>
+                            <li><a href="#">Data Analytics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Contact Us</h4>
+                        <div class="contact-info">
+                            <i>📍</i> Brandstrasse 21, Schlieren, Switzerland
+                        </div>
+                        <div class="contact-info">
+                            <i>📞</i> +41 79 450 89 27
+                        </div>
+                        <div class="contact-info">
+                            <i>📧</i> info@speats.ch
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Speats. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
