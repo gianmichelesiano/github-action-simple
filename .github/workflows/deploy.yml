@@ -1,0 +1,26 @@
+name: Deploy to Linode
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install sshpass
+      run: sudo apt-get install -y sshpass
+    
+    - name: Deploy to Linode
+      env:
+        SSH_PASS: ${{ secrets.SSH_PASSWORD }}
+      run: |
+        # Disabilita la verifica degli host conosciuti
+        mkdir -p ~/.ssh
+        echo "StrictHostKeyChecking no" > ~/.ssh/config
+        
+        # Deploy dei file (assicurati che il percorso corrisponda a quello usato da Traefik)
+        sshpass -p "$SSH_PASS" rsync -avz --delete ./ root@172.232.218.152:/var/www/speats.ch/
