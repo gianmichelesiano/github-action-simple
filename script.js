@@ -255,11 +255,56 @@ const translations = {
       'service_key_benefit_3': 'Évolutivité entre les départements',
       'service_key_benefit_4': 'Capacités d\'auto-apprentissage',
       
+      'service_process_automation_title': 'Automatisation des Processus',
+      'service_process_automation_description': 'Optimisez les flux de travail et éliminez les tâches répétitives avec nos solutions d\'automatisation avancées, permettant à votre équipe de se concentrer sur un travail à haute valeur ajoutée tout en réduisant les coûts opérationnels et en améliorant la précision.',
+      'service_automation_areas': 'Domaines d\'Automatisation:',
+      'service_automation_area_1': 'Traitement et analyse de documents',
+      'service_automation_area_2': 'Opérations de service client',
+      'service_automation_area_3': 'Optimisation de la chaîne d\'approvisionnement',
+      'service_automation_area_4': 'Conformité réglementaire',
+      
+      'service_custom_ai_applications_title': 'Applications IA Personnalisées',
+      'service_custom_ai_applications_description': 'Nous concevons et développons des applications IA sur mesure qui répondent aux défis spécifiques de votre entreprise et optimisent l\'efficacité opérationnelle avec des solutions construites spécifiquement pour vos besoins uniques.',
+      'service_features': 'Caractéristiques:',
+      'service_feature_1': 'Analyse prédictive',
+      'service_feature_2': 'Traitement du langage naturel',
+      'service_feature_3': 'Solutions de vision par ordinateur',
+      'service_feature_4': 'Systèmes d\'aide à la décision',
+      
+      // Approach section
+      'approach_title': 'Notre Approche',
+      'approach_description': 'Nous suivons une approche structurée pour comprendre vos besoins et fournir des solutions qui dépassent les attentes.',
+      
+      // Process steps
+      'process_step_1_title': 'Découverte',
+      'process_step_1_description': 'Nous analysons vos défis et identifions les opportunités pour l\'IA et l\'automatisation.',
+      'process_step_2_title': 'Conception',
+      'process_step_2_description': 'Nous concevons des solutions sur mesure avec une technologie IA de pointe.',
+      'process_step_3_title': 'Développement',
+      'process_step_3_description': 'Nos experts construisent et affinent votre solution en utilisant des méthodologies agiles.',
+      'process_step_4_title': 'Déploiement',
+      'process_step_4_description': 'Nous implémentons, testons et optimisons pour un impact et un ROI maximaux.',
+      
       // CTA section
       'cta_title': 'Prêt à Transformer Votre Entreprise?',
       'cta_description': 'Discutons de la façon dont nos solutions IA peuvent vous aider à atteindre vos objectifs et à rester en avance sur la concurrence.',
       'cta_call_us': 'Appelez +41 79 450 89 27',
-      'cta_send_mail': 'Envoyer un Email'
+      'cta_send_mail': 'Envoyer un Email',
+      
+      // Footer
+      'footer_company': 'Entreprise',
+      'footer_about_us': 'À Propos de Nous',
+      'footer_services': 'Services',
+      'footer_case_studies': 'Études de Cas',
+      'footer_careers': 'Carrières',
+      'footer_solutions': 'Solutions',
+      'footer_ai_applications': 'Applications IA',
+      'footer_intelligent_agents': 'Agents Intelligents',
+      'footer_process_automation': 'Automatisation des Processus',
+      'footer_data_analytics': 'Analyse de Données',
+      'footer_contact_us': 'Contactez-Nous',
+      'footer_copyright': '© 2025 Speats. Tous Droits Réservés.',
+      'footer_description': 'En exploitant la technologie IA de pointe, nous permettons aux entreprises d\'optimiser leurs opérations, de stimuler l\'innovation et d\'offrir des expériences client exceptionnelles.'
     },
     'de': {
       // Header
@@ -287,11 +332,65 @@ const translations = {
       'services_title': 'Unsere KI-Lösungen',
       'services_description': 'Wir entwickeln leistungsstarke Technologien, die reale Geschäftsprobleme lösen, die Produktivität steigern und messbare Ergebnisse liefern.',
       
+      // Service cards
+      'service_intelligent_agents_title': 'Intelligente Agenten',
+      'service_intelligent_agents_description': 'Unsere autonomen KI-Agenten können Ihre Geschäftsumgebung wahrnehmen, Entscheidungen treffen und Maßnahmen ergreifen, um bestimmte Ziele ohne menschliches Eingreifen zu erreichen. Sie bewältigen komplexe Arbeitsabläufe, Kundeninteraktionen und Datenanalysen mühelos.',
+      'service_key_benefits': 'Hauptvorteile:',
+      'service_key_benefit_1': '24/7-Betrieb ohne Ermüdung',
+      'service_key_benefit_2': 'Konstante Leistung',
+      'service_key_benefit_3': 'Skalierbarkeit über Abteilungen hinweg',
+      'service_key_benefit_4': 'Selbstlernfähigkeiten',
+      
+      'service_process_automation_title': 'Prozessautomatisierung',
+      'service_process_automation_description': 'Optimieren Sie Arbeitsabläufe und eliminieren Sie repetitive Aufgaben mit unseren fortschrittlichen Automatisierungslösungen, damit sich Ihr Team auf hochwertige Arbeit konzentrieren kann, während die Betriebskosten gesenkt und die Genauigkeit verbessert wird.',
+      'service_automation_areas': 'Automatisierungsbereiche:',
+      'service_automation_area_1': 'Dokumentenverarbeitung & -analyse',
+      'service_automation_area_2': 'Kundendienstoperationen',
+      'service_automation_area_3': 'Optimierung der Lieferkette',
+      'service_automation_area_4': 'Regulatorische Compliance',
+      
+      'service_custom_ai_applications_title': 'Maßgeschneiderte KI-Anwendungen',
+      'service_custom_ai_applications_description': 'Wir entwerfen und entwickeln maßgeschneiderte KI-Anwendungen, die Ihre spezifischen Geschäftsherausforderungen adressieren und die betriebliche Effizienz mit Lösungen optimieren, die speziell für Ihre einzigartigen Bedürfnisse entwickelt wurden.',
+      'service_features': 'Funktionen:',
+      'service_feature_1': 'Prädiktive Analytik',
+      'service_feature_2': 'Verarbeitung natürlicher Sprache',
+      'service_feature_3': 'Computer-Vision-Lösungen',
+      'service_feature_4': 'Entscheidungsunterstützungssysteme',
+      
+      // Approach section
+      'approach_title': 'Unser Ansatz',
+      'approach_description': 'Wir verfolgen einen strukturierten Ansatz, um Ihre Bedürfnisse zu verstehen und Lösungen zu liefern, die die Erwartungen übertreffen.',
+      
+      // Process steps
+      'process_step_1_title': 'Entdeckung',
+      'process_step_1_description': 'Wir analysieren Ihre Herausforderungen und identifizieren Möglichkeiten für KI und Automatisierung.',
+      'process_step_2_title': 'Design',
+      'process_step_2_description': 'Wir entwerfen maßgeschneiderte Lösungen mit modernster KI-Technologie.',
+      'process_step_3_title': 'Entwicklung',
+      'process_step_3_description': 'Unsere Experten bauen und verfeinern Ihre Lösung mit agilen Methoden.',
+      'process_step_4_title': 'Bereitstellung',
+      'process_step_4_description': 'Wir implementieren, testen und optimieren für maximale Wirkung und ROI.',
+      
       // CTA section
       'cta_title': 'Bereit, Ihr Unternehmen zu Transformieren?',
       'cta_description': 'Lassen Sie uns besprechen, wie unsere KI-Lösungen Ihnen helfen können, Ihre Ziele zu erreichen und der Konkurrenz voraus zu sein.',
       'cta_call_us': 'Rufen Sie an +41 79 450 89 27',
-      'cta_send_mail': 'E-Mail Senden'
+      'cta_send_mail': 'E-Mail Senden',
+      
+      // Footer
+      'footer_company': 'Unternehmen',
+      'footer_about_us': 'Über Uns',
+      'footer_services': 'Dienstleistungen',
+      'footer_case_studies': 'Fallstudien',
+      'footer_careers': 'Karriere',
+      'footer_solutions': 'Lösungen',
+      'footer_ai_applications': 'KI-Anwendungen',
+      'footer_intelligent_agents': 'Intelligente Agenten',
+      'footer_process_automation': 'Prozessautomatisierung',
+      'footer_data_analytics': 'Datenanalyse',
+      'footer_contact_us': 'Kontaktieren Sie Uns',
+      'footer_copyright': '© 2025 Speats. Alle Rechte vorbehalten.',
+      'footer_description': 'Durch den Einsatz modernster KI-Technologie ermöglichen wir Unternehmen, Abläufe zu optimieren, Innovation zu fördern und außergewöhnliche Kundenerlebnisse zu bieten.'
     }
 };
   
