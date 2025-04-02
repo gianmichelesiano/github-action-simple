@@ -91,7 +91,7 @@ const translations = {
       'stat_roi': 'ROI Within 6 Months',
       
       // Services section
-      'services_title': 'Our AI Solutions',
+      'services_title': 'Our AI Solutions.',
       'services_description': 'We create powerful technology that solves real business problems, enhances productivity, and delivers measurable results.',
       
       // Service cards
